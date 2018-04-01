@@ -1,0 +1,106 @@
+body{
+    background-color: black;
+}
+
+/*# is id selector, this selects an id named "landing-header"*/
+#landing-header{
+    
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+
+}
+
+#landing-header h1 {
+  color: white;
+}
+
+.slideshow { 
+
+  position: fixed;
+
+   /*width and height to be 100% so that images will take up 100% of the page*/
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  /*this is set to 0 because pictures are behind the title "welcome to yelpcamp*/
+  z-index: 0;
+
+   /*this makes bullet points disappear*/
+  list-style: none;
+
+  /*images take up too 100% of the screen so make sure theres no margin/padding or anything else*/
+  margin: 0;
+  padding: 0;
+}
+
+/*this will style each individual image(or list items)*/
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+   /*this is make sure the iamge to take up the entire space*/
+  background-size: cover;
+
+    /*this will center the image perfectly on the page*/
+  background-position: 50% 50%;
+
+    /*set this to no repeat so that the imageg doesn't repeat vertically or horizontally*/
+  background-repeat: no-repeat;
+
+    /*opacity starts from 0, so it starts faded out and it becomes more and more visible*/
+  opacity: 0;
+
+  z-index: 0;
+
+    /*first param is arbitrary, you can call it wahtever you want, the second params is how long this lasts for, linear: animation plays the same speed from       the beginning till the end, infinite: slide shows never end*/
+  animation: imageAnimation 50s linear infinite; 
+}
+
+
+/* nth-child means, if you have 5 li or 5 p, nth-child(1) will select the first child*/
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 40s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+

@@ -1,0 +1,33 @@
+
+<% include partials/header %>
+
+
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+      <h1>Welcome to YelpCamp!</h1>
+      <p>View our hand-picked camgrounds from all over the world</p>
+      <p>
+    <!--you can give quite a few classes too somehing like this-->
+      <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+    </p>
+    </div>
+</header>
+
+<div class="row text-center" style="display:flex; flex-wrap wrap;">
+<!--%= is only showing one object or something-->
+<% campgroundsss.forEach(function(campground){ %> <!--JavaScript codes grab DB shits can stored them in camgroudsss var, and we
+                                                    give it a name "campground" and it will be use in the following codes-->
+    <div class="col-md-3 col-sm-6">
+        <div class="img-thumbnail"><!--thumbnail is supposed to give a card wrapping looking-->
+          <img src="<%= campground.image %>" class="img-fluid" alt="Responsive image"><!--this is how you add an url!!-->
+          <!--fliid makes sure your picutre fits inside the gray box provided by img-thumbail-->
+          <div class="caption"><!--caption makes text goes under pic-->
+              <h4><%= campground.name %></h4>
+          </div>
+        </div>
+  </div>
+<% }); %>
+</div>
+
+<% include partials/footer %>

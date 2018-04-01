@@ -1,0 +1,22 @@
+<% include partials/header %> <!-- .. represent a level up-->
+<h5>Your search "<%= search%>" returns the following results</h5>
+
+<div class="row text-center" style="display:flex; flex-wrap wrap;">
+<%  searchResult.forEach(function(search){ %>
+
+
+<div class="col-md-3 col-sm-6">
+        <div class="img-thumbnail"><!--thumbnail is supposed to give a card wrapping looking-->
+    <img src="<%=search.image%>" class="img-fluid" alt="Responsive image">
+    <div class="caption"><!--caption makes text goes under pic-->
+    <%= search.name%>
+    </div>
+   <a href="/campgrounds/<%= search._id %>" class="btn btn-primary">More Info</a>
+
+
+</div>
+</div>
+<% }) %>
+</div>
+
+<% include partials/footer %>

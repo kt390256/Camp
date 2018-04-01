@@ -1,0 +1,19 @@
+.img-thumbnail img { 
+    
+width: 100%;
+    
+}
+
+.img-thumbnail {
+    padding: 0em;
+}
+
+#delete {
+  display: inline;
+}
+
+#deleteComment {
+    display: inline;
+}
+
+

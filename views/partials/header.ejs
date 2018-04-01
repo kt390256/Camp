@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <!--there are two ways to use bootstrap, this first is to download it the second is what i did down here-->
+          <title>JunCamp</title>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">JunCamp</a>
+        <div class="collapse navbar-collapse  justify-content-end">
+          <ul class="nav  navbar-nav">
+                <% if(!currentUser){ %>
+            <li class="nav-item active"><a class="nav-link" href="/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/register">Sign Up</a></li>
+                  <%  } else { %>
+            <li>Signed in as <%= currentUser.username %></li>
+            <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
+                <% } %>
+          </ul>
+          <form action="/results" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" name="searchContent" placeholder="Search">
+
+            <button class="btn btn-outline-success my-2 my-sm-0" role="button">Search</button>
+          </form>
+        </div>
+      </nav>
+
+<div class="container">
+        <% if(error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= error%>
+    </div>
+        <% } %>
+
+    <% if(success && success.length > 0) { %>
+    <div class="alert alert-success" role="success">
+        <%= success %>
+    </div>
+        <% } %>
+</div>

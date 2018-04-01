@@ -1,0 +1,45 @@
+
+<% include ../partials/header %> <!-- .. represent a level up-->
+
+
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+      <h1>Welcome to JunCamp!</h1>
+      <p>View our hand-picked camgrounds from all over the world</p>
+      <p>
+    <!--you can give quite a few classes too somehing like this-->
+      <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+    </p>
+    </div>
+</header>
+
+<div class="row text-center" style="display:flex; flex-wrap wrap;">
+<!--%= is only showing one object or something-->
+<% campgroundsss.forEach(function(campground){ %>
+    <div class="col-md-3 col-sm-6">
+        <div class="img-thumbnail"><!--thumbnail is supposed to give a card wrapping looking-->
+
+
+          <%if(campground.image){%>
+          <img src="<%= campground.image %>" class="img-fluid" ><!--this is how you add an url!!-->
+          <%}%>   
+          
+
+          <% if(campground.uploadImage){%>
+          <img src="<%= campground.uploadImage %>" class="img-fluid"><!--this is how you add an url!!-->
+          <% }%>
+         
+          <!--fliid makes sure your picutre fits inside the gray box provided by img-thumbail-->
+          <div class="caption"><!--caption makes text goes under pic-->
+              <h4><%= campground.name %></h4>
+          </div>
+          <!--so the following means, when you click on this More info button, it will take you to this
+          specific page whose id is its mongodb id-->
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+        </div>
+  </div>
+<% }); %>
+</div>
+
+<% include ../partials/footer %>
