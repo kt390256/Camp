@@ -1,4 +1,4 @@
-# campsite
+# JunCamp
 restful project with user Authen
 
 Stack: NodeJS ExpressJS MongoDB
