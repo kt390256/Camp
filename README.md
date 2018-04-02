@@ -1,5 +1,7 @@
 # campsite
-restful project with user authen and image upload
+restful project with user Authen
+
+Stack: NodeJS ExpressJS MongoDB
 
 https://gentle-garden-65699.herokuapp.com/
 
