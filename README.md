@@ -1,7 +1,7 @@
 # JunCamp
 restful project with user Authen
 
-IMAGE UPLOAD has been DISABLED on live site due to heroku slow connect, but upload codes are still in the project!
+IMAGE UPLOAD has been DISABLED on live site due to heroku slow connection, but upload codes are still in the project!
 
 Stack: NodeJS ExpressJS MongoDB
 
